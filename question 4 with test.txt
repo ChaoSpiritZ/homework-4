@@ -1,0 +1,47 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Enter 2 numbers and i will tell you which one is bigger and which one is smaller: ");
+		int a;
+		int b;
+		GetNumber(out a);
+		GetNumber(out b);
+		int bigger = 0;
+		int smaller = 0;
+		Compare(a,b,out bigger,out smaller);
+		Console.WriteLine("the bigger number is: " + bigger);
+		Console.WriteLine("the smaller number is: " + smaller);
+	}
+	
+	public static void Compare(int x,int y,out int biggernum,out int smallernum)
+	{
+		if(x > y)
+		{
+			biggernum = x;
+			smallernum = y;
+		}
+		else
+		{
+			biggernum = y;
+			smallernum = x;
+		}
+	}
+	
+	public static void GetNumber(out int a)
+	{
+		a = 1;
+		bool isnumber = true;
+		do
+		{
+			if(a <= 0 || isnumber == false)
+			{
+			Console.WriteLine("Please enter a positive number");
+			}
+		isnumber = int.TryParse(Console.ReadLine(),out a);
+		}
+		while(isnumber == false || a <= 0);
+	}
+}

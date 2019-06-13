@@ -1,0 +1,14 @@
+public static void GetNumber(out int a)
+	{
+		a = 1;
+		bool isnumber = true;
+		do
+		{
+			if(a <= 0 || isnumber == false)
+			{
+			Console.WriteLine("Please enter a positive number");
+			}
+		isnumber = int.TryParse(Console.ReadLine(),out a);
+		}
+		while(isnumber == false || a <= 0);
+	}

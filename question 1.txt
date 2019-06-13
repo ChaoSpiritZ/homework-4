@@ -1,0 +1,32 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		AskNumbers();
+		AskNumbers();
+		AskNumbers();
+		AskNumbers();
+	}
+	
+	public static void AskNumbers()
+	{
+		Console.WriteLine("Enter 2 numbers: ");
+		int a = int.Parse(Console.ReadLine());
+		int b = int.Parse(Console.ReadLine());
+		int result = Power(a,b);
+		Console.WriteLine(result);
+	}
+	
+	public static int Power(int x,int y)
+	{
+		int x2 = x;
+		for(int i = 1; i < y; i++)
+		{
+			x = x * x2;
+		}
+		int result = x;
+		return result;
+	}
+}
